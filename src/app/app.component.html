@@ -1,0 +1,14 @@
+<main>
+  <ul id="pokemonList">
+    @for (elPokemon of pokemonDatas; track elPokemon._uid) {
+      <li class="pokemonContainer">
+        <img [src]="elPokemon.picture" />
+        <div>
+          <p><strong>Name: </strong>{{ elPokemon.name }}</p>
+          <p><strong>HP: </strong>{{ elPokemon.hp }}</p>
+          <p><strong>CP: </strong>{{ elPokemon.cp }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</main>
