@@ -1,11 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { POKEMONS } from "./mock-pokemons";
 import { PokemonInterface } from "./pokemonData";
+import { BorderCardDirective } from "./border-card.directive";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["../styles.css"],
+  imports: [BorderCardDirective],
 })
 export class AppComponent implements OnInit {
   // prettier-ignore

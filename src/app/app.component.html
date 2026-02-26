@@ -2,7 +2,7 @@
   <h1>Liste de Pokémons:</h1>
   <ul id="pokemonList">
     @for (elPokemon of pokemonDatas; track elPokemon._uid) {
-      <li class="pokemonContainer">
+      <li class="pokemonContainer" appBorderCard="red">
         <img [src]="elPokemon.picture" />
         <div>
           <p><strong>Name: </strong>{{ elPokemon.name }}</p>
