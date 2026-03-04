@@ -3,12 +3,13 @@ import { POKEMONS } from "./mock-pokemons";
 import { PokemonInterface } from "./pokemonData";
 import { BorderCardDirective } from "./border-card.directive";
 import { DatePipe } from "@angular/common";
+import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["../styles.css"],
-  imports: [BorderCardDirective, DatePipe],
+  imports: [BorderCardDirective, DatePipe, PokemonTypeColorPipe],
 })
 export class AppComponent implements OnInit {
   // prettier-ignore

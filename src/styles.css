@@ -50,3 +50,17 @@ li {
   box-sizing: border-box;
   font-size: 18px;
 }
+
+#typesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pokemonTypes {
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  text-align: center;
+}

@@ -7,9 +7,12 @@
         <div>
           <p><strong>Name: </strong>{{ elPokemon.name }}</p>
           <p><strong>HP: </strong>{{ elPokemon.hp }}</p>
-          <div>
+          <div id="typesList">
             @for (typePokemon of elPokemon.types; track $index) {
-              <div>{{ typePokemon }}</div>
+              <!-- prettier-ignore -->
+              <div class="pokemonTypes"  [style.backgroundColor]="typePokemon | pokemonTypeColor">
+                {{ typePokemon }}
+              </div>
             }
           </div>
           <p>
