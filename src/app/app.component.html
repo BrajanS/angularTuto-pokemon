@@ -2,12 +2,22 @@
   <h1>Liste de Pokémons:</h1>
   <ul id="pokemonList">
     @for (elPokemon of pokemonDatas; track elPokemon._uid) {
-      <li class="pokemonContainer">
-        <img [src]="elPokemon.picture" />
+      <li class="pokemonContainer" appBorderCard="red">
+        <div><img [src]="elPokemon.picture" /></div>
         <div>
           <p><strong>Name: </strong>{{ elPokemon.name }}</p>
           <p><strong>HP: </strong>{{ elPokemon.hp }}</p>
-          <p><strong>CP: </strong>{{ elPokemon.cp }}</p>
+          <div id="typesList">
+            @for (typePokemon of elPokemon.types; track $index) {
+              <!-- prettier-ignore -->
+              <div class="pokemonTypes"  [style.backgroundColor]="typePokemon | pokemonTypeColor">
+                {{ typePokemon }}
+              </div>
+            }
+          </div>
+          <p>
+            <small>{{ elPokemon.created | date: "dd/MM/yyyy" }}</small>
+          </p>
         </div>
       </li>
     }
