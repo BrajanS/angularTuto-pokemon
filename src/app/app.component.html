@@ -3,11 +3,18 @@
   <ul id="pokemonList">
     @for (elPokemon of pokemonDatas; track elPokemon._uid) {
       <li class="pokemonContainer" appBorderCard="red">
-        <img [src]="elPokemon.picture" />
+        <div><img [src]="elPokemon.picture" /></div>
         <div>
           <p><strong>Name: </strong>{{ elPokemon.name }}</p>
           <p><strong>HP: </strong>{{ elPokemon.hp }}</p>
-          <p><strong>CP: </strong>{{ elPokemon.cp }}</p>
+          <div>
+            @for (typePokemon of elPokemon.types; track $index) {
+              <div>{{ typePokemon }}</div>
+            }
+          </div>
+          <p>
+            <small>{{ elPokemon.created | date: "dd/MM/yyyy" }}</small>
+          </p>
         </div>
       </li>
     }

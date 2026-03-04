@@ -19,14 +19,14 @@ li {
 
 #pokemonList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 360px);
   gap: 2rem;
   justify-content: center;
 }
 
 .pokemonContainer {
-  height: 200px;
-  width: 300px;
+  min-height: 200px;
+  width: 360px;
   padding: 10px;
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.444);
   box-sizing: border-box;
@@ -34,13 +34,17 @@ li {
   align-items: center;
 }
 
-.pokemonContainer > img {
-  height: fit-content;
+.pokemonContainer > div:nth-of-type(1) {
+  height: 100%;
   width: 60%;
   align-self: center;
 }
 
-.pokemonContainer > div {
+.pokemonContainer > div:nth-of-type(1) > img {
+  height: 100%;
+}
+
+.pokemonContainer > div:nth-of-type(2) {
   width: 40%;
   padding-left: 10px;
   box-sizing: border-box;

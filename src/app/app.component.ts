@@ -2,12 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { POKEMONS } from "./mock-pokemons";
 import { PokemonInterface } from "./pokemonData";
 import { BorderCardDirective } from "./border-card.directive";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["../styles.css"],
-  imports: [BorderCardDirective],
+  imports: [BorderCardDirective, DatePipe],
 })
 export class AppComponent implements OnInit {
   // prettier-ignore
@@ -21,9 +22,6 @@ export class AppComponent implements OnInit {
   getPokemonLog(pokemonArr: PokemonInterface[]) {
     if (typeof pokemonArr === "object" && pokemonArr !== null) {
       console.table(pokemonArr);
-      /*pokemonArr.forEach((elpokemon: PokemonInterface) => {
-        console.info("chosen Pokemon:", elpokemon.name);
-      });*/
     }
   }
 }
